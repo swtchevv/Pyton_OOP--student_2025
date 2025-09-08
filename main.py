@@ -91,3 +91,29 @@ print('To be\nor not\nto be\n')
 
 print("\"Life is what happens when youre busy making other plans\" John Lennon.")
 
+#Условные конструкции
+age = int(input("Введите ваш возраст:"))
+#if (условие) == True:
+#  функция действие
+
+if 0 < age < 10 :
+      print("ты ещё малыш")
+elif age < 20 and age > 10 :
+      print("ты ещё подросток")
+elif 20 < age < 45 :
+      print("ты молодёж")
+elif 45 < age < 100 :
+      print("ты уже пенсионер")
+else:
+      print("Неккоректный возраст")
+
+a = int(input("Введите первое число"))
+b = int(input("Введите второе число"))
+с = int(input("Введите третье число"))
+d = input("Введите + или *: ")
+if d == "+":
+      print(a + b + c)
+elif d == "*":
+      print(a * b * c)
+else:
+      print("Неверный знак")
