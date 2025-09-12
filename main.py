@@ -153,6 +153,4 @@ elif choice == "3":
 else:
     print("Ошибка: неверный выбор!")
 
-# Циклы
-for i in range(0, 10):
-      print("*", end=' ')
+
