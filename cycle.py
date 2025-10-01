@@ -48,49 +48,91 @@
 #                                 print("Я не могу возвести в такую степень")
 #
 # # Задание 3
+#
+# Sum = int(input("Введите сумму минут которую хотите потратить на разговор: "))
+# M = input("Доступные операторы:\nТеле2\nБилайн\nМтс\nЙота\nВведите оператор собеседника: ")
+#
+# if M == 'Теле2':
+#     print('Стоимость разговора составит:', Sum * 2)
+# else:
+#     if M == 'Билайн':
+#         print('Стоимость разговора составит:', Sum * 1.7)
+#     else:
+#         if M == 'Мтс':
+#             print('Стоимость разговора составит:', Sum * 1.4)
+#         else:
+#             if M == 'Йота':
+#                 print('Стоимость разговора составит:', Sum * 0.9)
+#             else:
+#                 print("Неизвестный оператор!")
+#
+# # Задание 4
+#
+# def calculate_salary(sales):
+#     base_salary = 200
+#     if sales <= 500:
+#         return base_salary + sales * 0.03
+#     elif sales <= 1000:
+#         return base_salary + sales * 0.05
+#     else:
+#         return base_salary + sales * 0.08
+#
+# sales = []
+# for i in range(3):
+#     sales_amount = float(input(f"Введите объем продаж для менеджера {i+1}: "))
+#     sales.append(sales_amount)
+#
+# salaries = [calculate_salary(s) for s in sales]
+#
+# best_manager_index = salaries.index(max(salaries))
+# best_manager_salary = salaries[best_manager_index] + 200
+# best_manager_sales = sales[best_manager_index]
+#
+# print("\n--- Итоги ---")
+# for i, salary in enumerate(salaries):
+#     print(f"Зарплата менеджера {i+1}: {salary:.2f}$")
+#
+# print(f"\nЛучший менеджер: {best_manager_index + 1} (продажи: {best_manager_sales:.2f}$)")
+# print(f"Зарплата лучшего менеджера (с премией): {best_manager_salary:.2f}$")
+#
+# # Задание 1
+# num = int(input("Введите число для таблицы умножения: "))
+# i = 1
+# while i <= 10:
+#     print(f"{num} * {i} = {num * i}")
+#     i += 1
+#
+# # Задание 3
+# user_min = int(input("Введите левую границу диапазона: "))
+# user_max = int(input("Введите правую границу диапазона: "))
+# user_value = int(input("Введите число для поиска в диапазоне: "))
+# while user_min < user_max:
+#     if user_min == user_value:
+#         print(f" !{user_min}!")
+#     else:
+#         print(user_value, end= ' ')
+#     user_min += 1
 
-Sum = int(input("Введите сумму минут которую хотите потратить на разговор: "))
-M = input("Доступные операторы:\nТеле2\nБилайн\nМтс\nЙота\nВведите оператор собеседника: ")
+# # Задание 4
 
-if M == 'Теле2':
-    print('Стоимость разговора составит:', Sum * 2)
-else:
-    if M == 'Билайн':
-        print('Стоимость разговора составит:', Sum * 1.7)
-    else:
-        if M == 'Мтс':
-            print('Стоимость разговора составит:', Sum * 1.4)
-        else:
-            if M == 'Йота':
-                print('Стоимость разговора составит:', Sum * 0.9)
-            else:
-                print("Неизвестный оператор!")
-
-# Задание 4
-
-def calculate_salary(sales):
-    base_salary = 200
-    if sales <= 500:
-        return base_salary + sales * 0.03
-    elif sales <= 1000:
-        return base_salary + sales * 0.05
-    else:
-        return base_salary + sales * 0.08
-
-sales = []
-for i in range(3):
-    sales_amount = float(input(f"Введите объем продаж для менеджера {i+1}: "))
-    sales.append(sales_amount)
-
-salaries = [calculate_salary(s) for s in sales]
-
-best_manager_index = salaries.index(max(salaries))
-best_manager_salary = salaries[best_manager_index] + 200
-best_manager_sales = sales[best_manager_index]
-
-print("\n--- Итоги ---")
-for i, salary in enumerate(salaries):
-    print(f"Зарплата менеджера {i+1}: {salary:.2f}$")
-
-print(f"\nЛучший менеджер: {best_manager_index + 1} (продажи: {best_manager_sales:.2f}$)")
-print(f"Зарплата лучшего менеджера (с премией): {best_manager_salary:.2f}$")
+from random import randint
+value_random = randint(1,500)
+print("Добро пожаловать в игру <Угадайте Число>")
+print("Ваша задача - угадать число в интервале от  1 до 500\n"
+      "Удачи!")
+user_choice = -50
+while user_choice != 0:
+    user_choice = int(input("Введите число: "))
+    if user_choice < value_random:
+        print("Ваше число меньше")
+    elif user_choice > value_random:
+        print("Ваше число больше")
+    elif user_choice == value_random:
+        print("Вы победили")
+        break
+'''
+Создайте калькулятор расчета денежных вкладов.
+Пользователь вводит начальную сумму, процент годовых и
+колиичество лет. Размер вклада за каждый год рассчитывается
+по формуле: вклад = вклад*(1 + Процент/100)
+'''
